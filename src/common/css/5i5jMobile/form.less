@@ -1,0 +1,108 @@
+/*form.less*/
+@import "variables.less";
+@import "mixins.less";
+
+/*表格*/
+
+/*文本框*/
+input{
+  padding:0;
+  margin: 0;
+
+  box-shadow: none;
+  /*搜索输入框*/
+  &.input-search{
+    width: 100%;
+    hegith:@input-height;
+    line-height: @input-height;
+    border-radius: @input-height;
+    border:none;
+    background-color:@gray-bg;
+    text-align: center;
+    font-size: @font-size-lg;
+    .placeholder(@gray-light-font);
+  }
+}
+
+/*
+选择框样式*/
+.select(@color:@blue-font,@bgColor:transparent){
+  height: @input-height;
+  width: 100%;
+  padding: 0;
+  line-height: @input-height;
+  font-size: @font-size-xlg;
+  color: @color;
+  box-shadow: none;
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  /*在选择框的最右侧中间显示小箭头图片*/
+  /*
+  background: @bgColor url('../img/arrow-down.png' ) no-repeat scroll right center transparent;
+  */
+  background:@bgColor url('../img/arrow-down.png' ) no-repeat scroll right center;
+  -webkit-background-size:10px 6px;
+  background-size:10px 6px;
+
+  border: none;
+
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  padding-right: 10px;
+}
+
+select{
+  &.select-blue{
+    .select()
+  }
+
+  &.block-form{
+      /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    border-radius: 0;
+
+    option{
+      color: @gray-light-font;
+    }
+
+  }
+}
+
+.block-form{
+  font-size: 15px;
+  color: @gray-light-font;
+  padding: 10px 1px;
+  width:100%;
+  box-sizing: border-box;
+
+  border:none;
+  border-bottom: 1px solid @gray-light-border;
+
+  box-shadow: none !important;
+
+  &.form-arrow-down{
+    /*在选择框的最右侧中间显示小箭头图片*/
+
+    background:transparent url('../img/arrow-down-lg.png' ) no-repeat scroll right center;
+    -webkit-background-size:14px 10px;
+    background-size:14px 10px;
+
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 16px;
+  }
+  &.form-arrow-right{
+    /*在选择框的最右侧中间显示小箭头图片*/
+
+    background:transparent url('../img/arrow-right-lg.png' ) no-repeat scroll right center;
+    -webkit-background-size:10px 14px;
+    background-size:10px 14px;
+
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 16px;
+  }
+}
+

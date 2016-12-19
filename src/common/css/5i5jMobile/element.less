@@ -1,0 +1,140 @@
+/*compose.less*/
+
+@import "variables.less";
+
+
+.tiao{
+  height:@tiao-height;
+  line-height: @tiao-height;
+  color: @gray-light-font;
+  background-color: @gray-bg;
+  font-size: @font-size-base;
+  border:1px solid @gray-border;
+  padding-left: 5px;
+  &.tiao-lg{
+    height:@tiao-height*1.11;
+    line-height: @tiao-height*1.11;
+  }
+}
+
+/*
+徽章*/
+.badge(@color){
+  display: inline-block;
+  font-size: 11rem;
+  line-height: 1;
+  border: 1px solid @color;
+  color: @color;
+  padding: 2px 6px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  &.badge-light{
+    color: lighten(@color,25%);
+    border-color: lighten(@color,25%);
+  }
+  &:disabled{
+    color: @gray-light-font;
+    border-color: @gray-light-font;
+  }
+}
+
+.badge-blue{
+  .badge(@blue-font)
+}
+.badge-orange{
+  .badge(@orange-font)
+}
+.badge-yellow{
+  .badge(@yellow-bg)
+}
+.badge-green{
+  .badge(@green-light-font)
+}
+.badge-red{
+  .badge(@red-font)
+}
+
+.badge-lg{
+  border-width: 2px;
+  font-size: @font-size-xlg;
+  padding:4px 5px;
+  border-radius: 14px;
+  box-sizing: border-box !important;
+}
+.badge-sm{
+  border-width: 1px;
+  font-size: 11px;
+  padding:2px 3px;
+  border-radius: 5px;
+  box-sizing: border-box !important;
+}
+/*
+半圆徽章*/
+.semicircle(@color){
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 12px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  background: @color;
+  color: #ffffff;
+  border-radius: 0 18px 18px 0;
+}
+.semicircle-yellow{
+  .semicircle(@yellow-bg)
+}
+
+/*
+标志*/
+.mark(@color,@size){
+  background: @color;
+  color: #fff;
+  padding: @size*0.375;
+  border-radius: @size*0.375-1;
+  font-size: 11rem;
+  &.mark-vertical{
+    width: @size*1.9;
+    padding:@size*0.375 @size*0.375-1;
+    line-height: @size*1.8;
+    margin-left: 3px;
+    margin-right: 3px;
+    /*line-height: 12px;
+    writing-mode : vertical-lr;
+    letter-spacing: 3px;*/
+  }
+}
+.mark-yellow{
+  .mark(@yellow-bg,8px)
+}
+.mark-blue{
+  .mark(@blue-bg,8px)
+}
+
+/*
+链接按钮状态*/
+
+.linkColor(@color){
+  color: @color;
+  border-color: @color;
+  &:visited{
+    color: @color;
+    border-color: @color;
+  }
+  &:hover{
+    color: lighten(@color,15%);
+    border-color: lighten(@color,15%);
+  }
+}
+
+.link-gray{
+  .linkColor(@gray-dark-font)
+}
+
+.link-blue{
+  .linkColor(@blue-light-font)
+}
+
+.link-blue{
+  .linkColor(@blue-light-font)
+}

@@ -1,0 +1,182 @@
+@import "variables.less";
+
+@media screen and (min-width: 421px) {
+  body {
+    box-sizing: border-box;
+    background-color:lightblue;
+    padding: 20px 0;
+    overflow: auto;
+    .page-content{
+      background: #fff;
+      max-width: 420px;
+      .nav-bottom{
+        width: 420px;
+        left:50%;
+        bottom: 20px;
+        margin-left: -210px;
+      }
+    }
+  }
+}
+
+
+
+
+/*最外层布局*/
+body,html,#app,.page-content{
+  height: 100%;
+  box-sizing: border-box;
+}
+#app>div{
+  height: 100%;
+
+}
+body .page-content{
+  margin:0 auto;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  &.has-bottom{
+    padding-bottom: 55px;
+  }
+  .main-content{
+    padding:@page-margin-vertical @page-margin-level;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    &>.full-content{
+      margin:0 -@page-margin-level;
+      padding-left:@page-margin-level;
+      padding-right:@page-margin-level;
+    }
+  }
+  /*&.has-nav-bottom{
+    margin-bottom: 60px;
+  }*/
+}
+
+.set-col(@cols) when (@cols > -1){
+  .col-@{cols}{
+    -webkit-flex: @cols;
+    flex: @cols;
+  }
+  .set-col((@cols - 1));
+}
+.flexBox{
+  display: -webkit-flex !important; /* Safari */
+  display: flex !important;
+  .set-col(5);
+}
+
+
+.grid {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+.set-col(5);
+
+.col-fixed{
+  flex:0 0 1;
+}
+
+.flexCenter{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+
+
+
+/*两端对齐盒子*/
+.justifyBox{
+  display: -webkit-flex !important; /* Safari */
+  display: flex !important;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.justifyVertivalBox{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  justify-content:space-between;
+  flex-direction:column;
+}
+
+/*行内挂起样式*/
+.hang(@height: -10) when (@height < 11){
+  .hang@{height}{
+    display: inline-block;
+    position: relative;
+    bottom:@height*10%;
+  }
+  .hang((@height + 1));
+}
+.hang();
+
+
+/*按钮组函数*/
+.btn-group(){
+  display: flex;
+  border-top:1px solid @gray-border;
+  background: #ffffff;
+  >li{
+    padding: 3px 0;
+  }
+  a{
+    cursor: pointer;
+    margin:0 auto;
+    text-align: center;
+    &.active{
+      color: @blue-light-font !important;
+    }
+    &.iconUp{
+      .iconfont{
+        display: block;
+        font-size: 26rem;
+      }
+      span{
+        display: block;
+        font-size: @font-size-xs;
+      }
+    }
+
+    &.iconOnly{
+      .iconfont{
+        display: block;
+        font-size: 35rem;
+      }
+    }
+    &.iconLeft{
+      display:flex;
+      justify-content:center;
+      align-items: center;
+      .iconfont{
+        display: inline-block;
+        font-size: 30rem;
+        padding-right: 4px;
+      }
+    }
+  }
+}
+
+/*按钮组件*/
+.btn-group{
+  .btn-group()
+}
+
+/*
+底部导航条*/
+.nav-bottom{
+  position: fixed;
+  width: 100%;
+  bottom:0;
+  left:0;
+
+  margin-bottom:0;
+
+  z-index: 2000;
+  .btn-group()
+}
+
+

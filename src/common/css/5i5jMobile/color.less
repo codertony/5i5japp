@@ -1,0 +1,96 @@
+/*color.less*/
+
+@import "variables.less";
+/*颜色*/
+.color(@color){
+  color: @color
+}
+.bgColor(@color){
+  background-color: @color
+}
+.borderColor(@color){
+  border-color: @color
+}
+
+
+/*灰色系*/
+.gray{
+  .color(@gray-font);
+}
+.gray-light{
+  .color(@gray-light-font)
+}
+.gray-lighter{
+  .color(@gray-lighter-font)
+}
+
+.gray-bg{.bgColor(@gray-bg)}
+
+.gray-light-bg{.bgColor(@gray-light-bg)}
+
+.gray-dark-bg{.bgColor(@gray-dark-bg)}
+
+.gray-border{.borderColor(@gray-border)}
+.gray-light-border{.borderColor(@gray-light-border)}
+
+/*有padding的border-bottom*/
+.gray-border-bottom(){
+  &:after{
+    content: "";
+    display: block;
+    margin:0 @page-margin-level;
+    border-bottom: 1px solid @gray-light-border;
+  }
+}
+.gray-border-bottom{
+  .gray-border-bottom()
+}
+/*白色系*/
+.white{.color(@white)}
+.white-bg{.bgColor(@white)}
+
+/*蓝色系*/
+.blue{.color(@blue-font)}
+.blue-light{.color(@blue-light-font)}
+
+.blue-bg{.bgColor(@blue-bg)}
+.blue-light-bg{.bgColor(@blue-light-bg)}
+
+/*橙色系*/
+.orange{.color(@orange-font)}
+
+/*黄色*/
+.yellow{.color(@yellow-font)}
+.yellow-dark{.color(@yellow-dark-font)}
+
+.yellow-bg{.bgColor(@yellow-bg)}
+
+/*绿色*/
+.green{.color(@green-font)}
+.green-light{.color(@green-light-font)}
+
+/*红色*/
+.red{.color(@red-font)}
+
+
+/*
+字体大小*/
+
+.f1{
+  font-size: @font-size-xlg;
+}
+.f2{
+  font-size: @font-size-lg;
+}
+.f3{
+  font-size: @font-size-base;
+}
+.f4{
+  font-size: @font-size-sm;
+}
+.f5{
+  font-size: @font-size-xs;
+}
+.f6{
+  font-size: @font-size-xxs;
+}
